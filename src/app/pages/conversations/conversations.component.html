@@ -1,0 +1,4 @@
+<div class="conversations-page">
+    <app-contacts-list (selectContact)="onContactSelected($event)"></app-contacts-list>
+    <app-conversation [contact]="selectedContact()"></app-conversation>
+  </div>

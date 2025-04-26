@@ -1,0 +1,23 @@
+@if(contact){
+
+    <div class="conversation">
+        <h3>Conversando com {{ contact }}</h3>
+      
+        <div class="messages">
+            @for (message of messages; track $index) {
+                <app-message [message]="message"></app-message>
+            }
+        </div>
+      
+        <div class="input-area">
+          <input [(ngModel)]="newMessage" placeholder="Digite sua mensagem...">
+          <button (click)="sendMessage()">Enviar</button>
+        </div>
+      </div>
+      
+    }
+    @else {        
+        <div class="no-contact">
+          <p>Selecione um contato para começar uma conversa.</p>
+        </div>     
+}

@@ -1,0 +1,29 @@
+$shadows: #000;
+$background: #111B20;
+$background-2: #222E34;
+$background-3: #0C1317;
+$fonte: #fff;
+$fonte-2: #a6abad;
+$highlight: #00473a;
+
+.message {
+    max-width: 70%;
+    padding: 0.8rem;
+    border-radius: 10px;
+    background-color: $background-2;
+    color: $fonte;
+    font-size: 1rem;
+    word-break: break-word;
+  
+    &.from-me {
+      align-self: flex-end;
+      background-color: $highlight;
+      color: $fonte;
+    }
+  
+    audio {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
+  

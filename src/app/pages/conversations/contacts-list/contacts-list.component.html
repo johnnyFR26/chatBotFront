@@ -1,0 +1,11 @@
+<div class="contacts-list">
+    @for (contact of contacts; track $index) {
+        <div (click)="select(contact.number)" class="contact">
+          <div>{{ contact.number }}</div>
+          @if (contact.unread > 0) {
+              <span class="badge">{{ contact.unread }}</span>
+          }
+        </div>
+    }
+  </div>
+  

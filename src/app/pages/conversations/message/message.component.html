@@ -1,0 +1,13 @@
+<div class="message" [class.from-me]="message.fromMe">
+    @if (message.type === 'text') {
+        <span >{{ message.body }}</span>
+    }
+    @else if (message.type === 'audio') {
+
+        <audio controls>
+          <source [src]="message.url" type="audio/ogg">
+          Seu navegador não suporta áudio.
+        </audio>
+    }
+  </div>
+  
