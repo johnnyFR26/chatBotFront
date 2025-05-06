@@ -9,10 +9,10 @@ import { MessagesService } from './services/messages.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
-  title = 'chatBot';
+  title = 'Wenvia';
   private messageService = inject(MessagesService)
 
-  ngOnInit(): any {
-    this.messageService.getMessages()
+  ngOnInit(): void {
+    this.messageService.fetchMessages()
   }
 }

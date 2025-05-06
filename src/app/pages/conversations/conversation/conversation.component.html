@@ -4,8 +4,8 @@
         <h3>Conversando com {{ contact }}</h3>
       
         <div class="messages">
-            @for (message of messages; track $index) {
-                <app-message [message]="message"></app-message>
+            @for (message of messages(); track $index) {
+                <app-message [message]="message?.messages[$index]"></app-message>
             }
         </div>
       

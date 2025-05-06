@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { MessagesService } from '../../../services/messages.service';
 
 @Component({
   selector: 'app-contacts-list',
@@ -8,12 +9,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class ContactsListComponent {
   @Output() selectContact = new EventEmitter<string>();
+  private messageService = inject(MessagesService)
 
-  contacts = [
-    { number: '5511999999999', unread: 2 },
-    { number: '5511888888888', unread: 5 },
-    { number: '5511777777777', unread: 0 }
-  ];
+  contacts = this.messageService.getContacts()
+
+
 
   select(number: string) {
     this.selectContact.emit(number);
